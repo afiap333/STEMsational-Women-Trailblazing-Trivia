@@ -36,6 +36,9 @@ class Main (tk.Tk):
         self.questionsAnswered+=1
         if self.questionsAnswered>=10:
             messagebox.showinfo(title="Game over!", message="Your final score is "+str(self.score))
+            self.score=0
+            self.questionsAnswered=0
+            self.correctAnswers=0
             self.show_frame("Restart")
         else:
             messagebox.showinfo(title="Correct Answer", message="Correct! Your current score is "+str(self.score))
@@ -46,6 +49,9 @@ class Main (tk.Tk):
         self.questionsAnswered+=1
         if self.questionsAnswered>=10:
             messagebox.showinfo(title="Game over", message="Sorry, that's wrong! Your final score is " + str(self.score))
+            self.score=0
+            self.questionsAnswered=0
+            self.correctAnswers=0
             self.show_frame("Restart")
         else:
             messagebox.showinfo(title="Wrong answer", message="Sorry! That's wrong. Your current score is " + str(self.score))
