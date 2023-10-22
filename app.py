@@ -55,7 +55,7 @@ class WelcomePage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self,parent,width=500,height=700, bg="#F5DFF0")
         self.controller=controller
-        title=tk.Label(self, text="STEMsational Women: Trivia Trailblazers", wraplength=400, font=("Modern No. 20",40, 'bold'),
+        title=tk.Label(self, text="STEMsational Women: Trailblazing Trivia", wraplength=400, font=("Modern No. 20",40, 'bold'),
                        bg="#F5DFF0",fg="#E16D92",justify="center")
         title.place(anchor="center", y=100,x=250)
         photo=tk.PhotoImage(file="logo.png")
