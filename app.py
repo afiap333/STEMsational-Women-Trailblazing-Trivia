@@ -4,6 +4,7 @@ from tkinter import messagebox
 
 
 class Main (tk.Tk):
+    ##https://www.geeksforgeeks.org/create-multiple-frames-with-grid-manager-using-tkinter/ reference for creating multi-frame program
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
         container=tk.Frame(self,width=500, height=700)
@@ -22,11 +23,14 @@ class Main (tk.Tk):
             frame.grid(row=0,column=0,sticky="nsew")
         self.show_frame("WelcomePage")
     def show_frame(self,page_name):
+        ##function to switch frames
         frame=self.frames[page_name]
         frame.tkraise()
     def end_game(self):
+        ##function to end game
         self.destroy()
     def correctAnswer(self,questionNum):
+        ##display correct answer message
         self.correctAnswers+=1
         self.score+=10
         self.questionsAnswered+=1
@@ -38,6 +42,7 @@ class Main (tk.Tk):
             frame=self.frames[questionNum]
             frame.tkraise()
     def wrongAnswer(self,questionNum):
+        ##display wrong answer message
         self.questionsAnswered+=1
         if self.questionsAnswered>=10:
             messagebox.showinfo(title="Game over", message="Sorry, that's wrong! Your final score is " + str(self.score))
